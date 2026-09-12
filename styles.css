@@ -647,8 +647,23 @@ a {
 .service-card p,
 .cta-box p {
   margin: 0;
-  color: var(--muted);
+  color: var(--text);
   line-height: 1.75;
+}
+
+.project-copy {
+  color: var(--text);
+}
+
+.project-copy p {
+  color: #315f4e;
+  font-weight: 500;
+  line-height: 1.8;
+}
+
+.project-copy .label {
+  color: #175b47;
+  font-weight: 800;
 }
 
 .impact-stats {
@@ -767,10 +782,11 @@ a {
   grid-template-columns: 0.9fr 1.1fr;
   gap: 20px;
   align-items: center;
-  background: rgba(255, 255, 255, 0.28);
+  background: linear-gradient(135deg, rgba(255,255,255,0.84), rgba(235,244,236,0.82));
   border: 1px solid var(--line);
   border-radius: 24px;
   padding: 26px 24px;
+  box-shadow: var(--shadow);
 }
 
 .project-visual {
@@ -795,8 +811,8 @@ a {
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--green);
-  font-weight: 700;
+  color: #0d513f;
+  font-weight: 800;
 }
 
 .project-meta {
@@ -815,13 +831,13 @@ a {
 
 .project-meta strong {
   display: block;
-  color: var(--green);
-  font-size: 1.4rem;
+  color: #176d55;
+  font-size: 1.45rem;
   margin-bottom: 8px;
 }
 
 .project-meta span {
-  color: var(--muted);
+  color: #50786c;
   font-size: 0.82rem;
 }
 

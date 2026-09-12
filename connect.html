@@ -3,23 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects | Clean Earth</title>
-    <meta name="description" content="See some of the environmental projects and sustainable solutions delivered by Clean Earth." />
+    <title>Let’s Connect | Clean Earth</title>
+    <meta name="description" content="Connect with Clean Earth to discuss waste strategy, recycling, and sustainability services." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
-    <style>
-      .project-hero .page-copy h1,
-      .project-hero .page-copy p:last-of-type {
-        color: #ffffff;
-      }
-
-      .project-card .project-content span,
-      .project-card .project-content h3 {
-        color: #ffffff;
-      }
-    </style>
   </head>
   <body>
     <header class="site-header">
@@ -58,44 +47,50 @@
     </header>
 
     <main>
-      <section class="page-hero project-hero">
+      <section class="page-hero contact-hero connect-hero">
         <div class="container page-hero-inner">
           <div class="page-copy">
-            <p class="eyebrow">Projects</p>
-            <h1>Delivering impact where it matters most.</h1>
+            <p class="eyebrow">Let’s Connect</p>
+            <h1>Let’s plan your next sustainability move.</h1>
             <p>
-              We create and manage waste solutions that improve operational performance while supporting
-              environmental stewardship across industries and communities.
+              Share your waste, recycling, or resource recovery goals and our team will help identify the right environmental pathway for your organization.
             </p>
           </div>
         </div>
       </section>
 
       <section class="page-section">
-        <div class="container project-page-grid">
-          <article class="project-card">
-            <div class="project-image image-project-one"></div>
-            <div class="project-content">
-              <span>Industrial Waste</span>
-              <h3>Waste diversion for large-scale operations</h3>
+        <div class="container contact-page-wrap">
+          <form class="contact-form" action="#" method="post">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="full-name">Full Name</label>
+                <input id="full-name" name="fullName" type="text" placeholder="Your full name" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input id="phone" name="phone" type="tel" placeholder="Your phone number" required />
+              </div>
             </div>
-          </article>
 
-          <article class="project-card">
-            <div class="project-image image-project-two"></div>
-            <div class="project-content">
-              <span>Soil Recovery</span>
-              <h3>Contaminated soil treatment and recycling</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" required />
+              </div>
+              <div class="form-group">
+                <label for="company">Company</label>
+                <input id="company" name="company" type="text" placeholder="Your company" />
+              </div>
             </div>
-          </article>
 
-          <article class="project-card">
-            <div class="project-image image-project-three"></div>
-            <div class="project-content">
-              <span>Materials Reuse</span>
-              <h3>Turning recovered materials into circular resources</h3>
+            <div class="form-group">
+              <label for="message">How can we help?</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell us about your waste, recycling, or sustainability needs..." required></textarea>
             </div>
-          </article>
+
+            <button type="submit" class="explore-btn form-btn">Send Message</button>
+          </form>
         </div>
       </section>
     </main>
