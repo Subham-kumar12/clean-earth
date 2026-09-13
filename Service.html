@@ -1,75 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Services | Clean Earth</title>
-    <meta name="description" content="Explore Clean Earth recycling, hazardous waste, and environmental services designed for a cleaner future." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
-    <style>
-      .page-hero .page-copy h1,
-      .page-hero .page-copy p:last-of-type,
-      .page-hero .eyebrow,
-      .service-card h3,
-      .service-card p {
-        color: #ffffff;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | Clean Earth</title>
+  <meta name="description" content="Explore Clean Earth environmental services, waste solutions, recycling services, and sustainability programs." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .service-hero {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)),
+        url("https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
+    }
+
+    .service-hero .page-copy h1,
+    .service-hero .page-copy p:last-of-type {
+      color: #ffffff;
+    }
+
+    .service-program-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .service-program-card {
+      background: rgba(255,255,255,0.30);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 22px 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .service-program-card span {
+      display: block;
+      color: var(--green);
+      font-weight: 800;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 12px;
+    }
+
+    .service-program-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.12rem;
+      letter-spacing: -0.03em;
+      color: var(--text);
+    }
+
+    .service-program-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.92rem;
+    }
+
+    .cta-panel {
+      background: linear-gradient(135deg, rgba(29,88,76,0.9), rgba(84,140,105,0.86));
+      color: #ffffff;
+      border-radius: 26px;
+      padding: 44px 30px;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .cta-panel .eyebrow,
+    .cta-panel h2,
+    .cta-panel p {
+      color: #ffffff;
+    }
+
+    .cta-panel p {
+      max-width: 780px;
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 1100px) {
+      .service-program-grid,
+      .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
-    </style>
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container nav-wrap">
-        <div class="brand" aria-label="Clean Earth logo and brand">
-          <div class="brand-mark" aria-hidden="true">
-            <svg viewBox="0 0 64 64" role="img" aria-label="Clean Earth icon">
-              <path d="M32 8c-8 5-13 12-13 21 0 10 7 17 13 22 6-5 13-12 13-22 0-9-5-16-13-21Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
-              <path d="M32 14c-3 4-5 8-5 13 0 7 4 12 5 15 1-3 5-8 5-15 0-5-2-9-5-13Z" fill="currentColor" opacity=".72"/>
-              <path d="M18 33c5 0 9 4 9 9M46 33c-5 0-9 4-9 9M32 18v11M20 25c4 0 6 2 8 5M44 25c-4 0-6 2-8 5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="brand-text">
-            <h2>CLEAN EARTH</h2>
-            <span>INCORPORATION</span>
-            <small>Transforming Waste Into Circular Resources</small>
-          </div>
+
+      .cta-panel {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .service-program-grid,
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <div class="brand" aria-label="Clean Earth logo and brand">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" role="img" aria-label="Clean Earth icon">
+            <path d="M32 8c-8 5-13 12-13 21 0 10 7 17 13 22 6-5 13-12 13-22 0-9-5-16-13-21Z" fill="none" stroke="currentColor" stroke-width="2.5" />
+            <path d="M32 14c-3 4-5 8-5 13 0 7 4 12 5 15 1-3 5-8 5-15 0-5-2-9-5-13Z" fill="currentColor" opacity=".72" />
+            <path d="M18 33c5 0 9 4 9 9M46 33c-5 0-9 4-9 9M32 18v11M20 25c4 0 6 2 8 5M44 25c-4 0-6 2-8 5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+          </svg>
         </div>
-
-        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
-        <nav class="main-nav" aria-label="Main navigation">
-          <a href="index.html">Home</a>
-          <a href="about.html">About Us</a>
-          <a href="service.html">Service</a>
-          <a href="project.html">Project</a>
-          <a href="contact.html">Contact Us</a>
-        </nav>
-
-        <a href="connect.html" class="connect-btn">Let’s Connect</a>
+        <div class="brand-text">
+          <h2>CLEAN EARTH</h2>
+          <span>INCORPORATION</span>
+          <small>Transforming Waste Into Circular Resources</small>
+        </div>
       </div>
-    </header>
 
-    <main>
-      <section class="page-hero about-hero">
-        <div class="container page-hero-inner">
-          <div class="page-copy">
-            <p class="eyebrow">Our Services</p>
-            <h1>Responsible solutions for complex waste streams.</h1>
-            <p>
-              From sorting and transportation to treatment and compliance, we provide practical environmental services that protect people, assets, and the planet.
-            </p>
-          </div>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="service.html" class="active">Service</a>
+        <a href="project.html">Project</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+
+      <a href="connect.html" class="connect-btn">Let’s Connect</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero service-hero">
+      <div class="container page-hero-inner">
+        <div class="page-copy">
+          <p class="eyebrow">Environmental Services</p>
+          <h1>Solutions for a cleaner circular economy.</h1>
+          <p>
+            Clean Earth connects waste streams, regulatory expertise, treatment networks,
+            and resource recovery programs to help organizations reduce impact and build
+            stronger environmental performance.
+          </p>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="page-section">
-        <div class="container service-grid large-service-grid">
+    <section class="page-section">
+      <div class="container split-layout">
+        <div class="text-panel">
+          <p class="eyebrow">What We Deliver</p>
+          <h2>From collection to recovery, every program is built around value.</h2>
+          <p>
+            Our environmental services are designed to help customers manage hazardous and non-hazardous
+            waste safely, responsibly, and compliantly. We bring a full-service model that supports
+            operations, recycling, treatment, compliance, and long-term sustainability goals.
+          </p>
+        </div>
+        <div class="image-panel image-panel-three"></div>
+      </div>
+    </section>
+
+    <section class="page-section muted-section">
+      <div class="container">
+        <div class="section-heading center">
+          <p class="eyebrow">Our Service Approach</p>
+          <h2>How Clean Earth supports your environmental goals.</h2>
+        </div>
+
+        <div class="service-program-grid">
+          <article class="service-program-card">
+            <span>01 / Strategy</span>
+            <h3>Waste Review</h3>
+            <p>We evaluate your waste streams, regulatory requirements, and operational priorities.</p>
+          </article>
+
+          <article class="service-program-card">
+            <span>02 / Collection</span>
+            <h3>Responsible Logistics</h3>
+            <p>We coordinate safe collection, transport, inventory, and waste handling programs.</p>
+          </article>
+
+          <article class="service-program-card">
+            <span>03 / Treatment</span>
+            <h3>Recovery &amp; Recycling</h3>
+            <p>We connect waste with treatment, reuse, recycling, and resource recovery channels.</p>
+          </article>
+
+          <article class="service-program-card">
+            <span>04 / Compliance</span>
+            <h3>Reporting &amp; Care</h3>
+            <p>We provide documentation, guidance, and accountable service for better outcomes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="container">
+        <div class="section-heading center">
+          <p class="eyebrow">Environmental Services</p>
+          <h2>Solutions for every need</h2>
+        </div>
+
+        <div class="service-grid">
           <article class="service-card">
             <h3>Waste Disposal &amp; Transportation</h3>
             <p>Safe, compliant collection and transport across diverse waste streams.</p>
@@ -103,30 +245,33 @@
             <p>Fast-response waste handling and secure recall logistics for regulated goods.</p>
           </article>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="page-section muted-section">
-        <div class="container split-layout">
-          <div class="text-panel">
-            <p class="eyebrow">Why Clean Earth</p>
-            <h2>Customized solutions built around your requirements.</h2>
+    <section class="page-section">
+      <div class="container">
+        <div class="cta-panel">
+          <div>
+            <p class="eyebrow">Let’s Design Your Program</p>
+            <h2>Turn environmental waste into a stronger business decision.</h2>
             <p>
-              We work alongside our clients to design programs that align with operational priorities,
-              regulatory obligations, and long-term sustainability goals. Every solution is shaped by
-              service reliability, environmental stewardship, and measurable outcomes.
+              Whether you need waste collection, recycling, treatment, compliance, or resource recovery,
+              Clean Earth provides the expertise and network to help your organization move forward.
             </p>
           </div>
-          <div class="image-panel image-panel-three"></div>
+          <a href="connect.html" class="explore-btn">Plan a Consultation</a>
         </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <p>Reduce. Reuse. Recycle. Reimagine.</p>
-        <p>© 2026 Clean Earth. All rights reserved.</p>
       </div>
-    </footer>
-    <script src="script.js"></script>
-  </body>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Reduce. Reuse. Recycle. Reimagine.</p>
+      <p>© 2026 Clean Earth. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
